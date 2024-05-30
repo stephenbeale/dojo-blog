@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const title = "Welcome to the new blog!";
+  const likes = 50;
+  const person = { name: "yoshi", age: 30 };
+  const link = "https://google.com";
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <div className="content">
+        <h1>App Component</h1>
+        <p>Liked {likes} times</p>
+
+        {/* <p>{person}</p> */}
+        <p>{" hello ninjas "}</p>
+        <p>"Array: {[1, 2, 3, 4, 5]}"</p>
+        <p>"Random number: {Math.random() * 10}"</p>
+
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Dynamic values link:
+          <a href="link">Google</a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
     </div>
   );
 }

@@ -7,14 +7,18 @@ const Home = () => {
       {title: 'Welcome party!', body: 'lorem ipsum...', author: 'luigi', id: 2},
       {title: 'Web dev top tips', body: 'lorem ipsum...', author: 'yoshi', id: 3}
     ]
-  )
-  };
+  );
 
   return (
     <div className="home">
-      <h2>Home Page</h2>      
+      {blogs.map((blog) => (
+        <div className="blog-preview" key={blog.id}>
+          <h2>{blog.title}</h2>
+          <p>Written by {blog.author}</p>
+          <p></p>
+        </div>))} 
     </div>
   );
-};
+}
 
 export default Home;

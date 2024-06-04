@@ -1,13 +1,21 @@
 import { useState } from "react";
 
-const Home = () => {  
-const [blogs, setBlogs] = useState([
-  {title: 'My new website', body: 'lorem ipsum...', author: 'mario', id: 1},
-  {title: 'Hello World', body: 'lorem ipsum...', author: 'luigi', id: 2},
-  {title: 'Web dev top tips', body: 'lorem ipsum...', author: 'yoshi', id: 3}
-]);
+const Home = () => {
+  const [name, setName] = useState("mario");
+  const [age, setAge] = useState(25);
+
+  const handleClick = () => {
+    setName("luigi");
+    setAge(30);
+  };
+
   return (
-    <div className="home">      
+    <div className="home">
+      <h2>Home Page</h2>
+      <p>
+        {name} is {age} years old
+      </p>
+      <button onClick={handleClick}>Click Me</button>
     </div>
   );
 };

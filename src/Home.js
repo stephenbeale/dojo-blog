@@ -13,6 +13,7 @@ const Home = () => {
     },
   ]);
 
+  //Remove any blogs from the array that DO NOT match the given id, i.e. only leaving blogs with matching id in to be deleted.
   const handleDelete = (id) => {
     const newBlogs = blogs.filter((blog) => blog.id !== id);
     setBlogs(newBlogs);

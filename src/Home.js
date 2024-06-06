@@ -24,8 +24,8 @@ const Home = () => {
   //Will run every time there is a re-render
   useEffect(() => {
     console.log("use effect ran");
-    console.log(blogs);
-  }, []);
+    console.log(name);
+  }, [name]);
 
   return (
     <div className="home">

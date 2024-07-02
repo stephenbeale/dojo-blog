@@ -4,6 +4,7 @@ import BlogList from "./bloglist";
 const Home = () => {
   const [blogs, setBlogs] = useState(null);
   const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
 
   //Will run every time there is a re-render
   useEffect(() => {
@@ -22,13 +23,14 @@ const Home = () => {
           setIsPending(false);
         })
         .catch((err) => {
-          console.log(err);
+          setError(err.message);
         });
     }, 750);
   }, []);
 
   return (
     <div className="home">
+      {error && <div> {error}</div>}
       {isPending && <div>Loading...</div>}
       {/* Blogs and works through conditional templating - 'logical and' from JS evaluates left side first, but if null, then evaluates right */}
       {blogs && <BlogList blogs={blogs} title="All Blogs!" />}

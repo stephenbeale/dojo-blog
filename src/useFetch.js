@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useFetch = () => {
+const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
@@ -9,7 +9,7 @@ const useFetch = () => {
   useEffect(() => {
     setTimeout(() => {
       //Then - fires a function once we have the data back
-      fetch("http://localhost:8000/blogss")
+      fetch(url)
         .then((res) => {
           if (!res.ok) {
             throw Error("Could not fetch the data for that resource");
@@ -26,7 +26,7 @@ const useFetch = () => {
           setError(err.message);
         });
     }, 750);
-  }, []);
+  }, [url]);
 
   /*
   Return some values - here, an object with three values AKA properties in it

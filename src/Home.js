@@ -2,7 +2,9 @@ import BlogList from "./bloglist";
 import useFetch from "./useFetch";
 
 const Home = () => {
+  //Introduce custom hook, pass in the endpoint. Handles errors if there are any, too.
   const {
+    //Custom renaming of data property
     data: blogs,
     isPending,
     error,

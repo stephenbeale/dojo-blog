@@ -9,8 +9,11 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       //Then - fires a function once we have the data back
-      fetch("http://localhost:8000/blogs")
+      fetch("http://localhost:8000/blogss")
         .then((res) => {
+          if (!res.ok) {
+            throw Error("Could not fetch the data for that resource");
+          }
           return res.json();
         })
         .then((data) => {

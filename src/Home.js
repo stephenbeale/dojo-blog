@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       //Then - fires a function once we have the data back
-      fetch("http://localhost:8000/blogss")
+      fetch("http://localhost:8000/blogs")
         .then((res) => {
           if (!res.ok) {
             throw Error("Could not fetch the data for that resource");
@@ -18,11 +18,12 @@ const Home = () => {
           return res.json();
         })
         .then((data) => {
-          console.log(data);
           setBlogs(data);
           setIsPending(false);
+          setError(null);
         })
         .catch((err) => {
+          setIsPending(false);
           setError(err.message);
         });
     }, 750);

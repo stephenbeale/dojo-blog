@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useFetch = () => {
-  const [blogs, setData] = useState(null);
+  const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
 
@@ -27,6 +27,12 @@ const useFetch = () => {
         });
     }, 750);
   }, []);
+
+  /*
+  Return some values - here, an object with three values AKA properties in it
+  This allows us to get these properties from the hook in future from elsewhere.
+  */
+  return { data, isPending, error };
 };
 
 //Means we can use this in other files and components.

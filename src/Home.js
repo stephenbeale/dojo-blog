@@ -21,3 +21,5 @@ const Home = () => {
 };
 
 export default Home;
+
+//Continue here: https://youtu.be/aZGzwEjZrXc?si=b6ZzazGMLzLObq2x&t=97

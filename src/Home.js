@@ -1,33 +1,14 @@
-import { useState, useEffect } from "react";
 import BlogList from "./bloglist";
+import useFetch from "./useFetch";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(null);
-  const [isPending, setIsPending] = useState(true);
-  const [error, setError] = useState(null);
-
-  //Will run every time there is a re-render
-  useEffect(() => {
-    setTimeout(() => {
-      //Then - fires a function once we have the data back
-      fetch("http://localhost:8000/blogs")
-        .then((res) => {
-          if (!res.ok) {
-            throw Error("Could not fetch the data for that resource");
-          }
-          return res.json();
-        })
-        .then((data) => {
-          setBlogs(data);
-          setIsPending(false);
-          setError(null);
-        })
-        .catch((err) => {
-          setIsPending(false);
-          setError(err.message);
-        });
-    }, 750);
-  }, []);
+  //Introduce custom hook, pass in the endpoint. Handles errors if there are any, too.
+  const {
+    //Custom renaming of data property
+    data: blogs,
+    isPending,
+    error,
+  } = useFetch("http://localhost:8000/blogs");
 
   return (
     <div className="home">

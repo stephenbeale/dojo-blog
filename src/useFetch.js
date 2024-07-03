@@ -7,9 +7,10 @@ const useFetch = (url) => {
 
   //Will run every time there is a re-render
   useEffect(() => {
+    const abortCont = new AbortController();
     setTimeout(() => {
       //Then - fires a function once we have the data back
-      fetch(url)
+      fetch(url, { signal: abortCont.signal })
         .then((res) => {
           if (!res.ok) {
             throw Error("Could not fetch the data for that resource");
@@ -26,6 +27,7 @@ const useFetch = (url) => {
           setError(err.message);
         });
     }, 750);
+    return () => abortCont.abort();
   }, [url]);
 
   /*

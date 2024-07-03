@@ -1,5 +1,6 @@
 import BlogList from "./bloglist";
 import useFetch from "./useFetch";
+//Branch forgotten for video 24!
 
 const Home = () => {
   //Introduce custom hook, pass in the endpoint. Handles errors if there are any, too.

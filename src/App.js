@@ -5,6 +5,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom/cjs/react-router-dom";
+import Create from "./Create";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           Nest home component inside so this shows when home route is requested*/}
             <Route path="/">
               <Home />
+            </Route>
+            <Route path="/create">
+              <Create />
             </Route>
           </Switch>
         </div>

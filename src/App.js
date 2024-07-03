@@ -6,6 +6,7 @@ import {
   Switch,
 } from "react-router-dom/cjs/react-router-dom";
 import Create from "./Create";
+import BlogDetails from "./BlogDetails";
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
             </Route>
             <Route exact path="/create">
               <Create />
+            </Route>
+            {/* Dynamic values just need a named parameter after colon to work */}
+            <Route exact path="/blogs/:id">
+              <BlogDetails />
             </Route>
           </Switch>
         </div>

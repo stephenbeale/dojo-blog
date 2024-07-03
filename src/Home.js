@@ -1,4 +1,4 @@
-import BlogList from "./bloglist";
+import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 //Branch forgotten for video 24!
 

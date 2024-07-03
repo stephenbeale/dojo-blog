@@ -5,6 +5,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom/cjs/react-router-dom";
+import Create from "./Create";
 
 function App() {
   return (
@@ -14,11 +15,14 @@ function App() {
         <div className="content">
           {/* Switch component makes sure that only one route shows at any one time
         All routes go inside this component */}
-          <Switch>
+          <Switch>jj
             {/* Determines path for home page of site 
           Nest home component inside so this shows when home route is requested*/}
-            <Route path="/">
+            <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/create">
+              <Create />
             </Route>
           </Switch>
         </div>

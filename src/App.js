@@ -11,16 +11,17 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <div className="content"></div>
-        {/* Switch component makes sure that only one route shows at any one time
+        <div className="content">
+          {/* Switch component makes sure that only one route shows at any one time
         All routes go inside this component */}
-        <Switch>
-          {/* Determines path for home page of site 
+          <Switch>
+            {/* Determines path for home page of site 
           Nest home component inside so this shows when home route is requested*/}
-          <Route exact path="/">
-            <Home />
-          </Route>
-        </Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
       </div>
     </Router>
   );

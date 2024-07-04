@@ -23,4 +23,4 @@ const Home = () => {
 
 export default Home;
 
-//Continue here: https://youtu.be/aZGzwEjZrXc?si=b6ZzazGMLzLObq2x&t=97
+//Continue here: https://www.youtube.com/watch?v=pJiRj02PkJQ&list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d&index=28

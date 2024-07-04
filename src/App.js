@@ -7,6 +7,7 @@ import {
 } from "react-router-dom/cjs/react-router-dom";
 import Create from "./Create";
 import BlogDetails from "./BlogDetails";
+import NotFound from "./NotFound";
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
             {/* Dynamic values just need a named parameter after colon to work */}
             <Route exact path="/blogs/:id">
               <BlogDetails />
+            </Route>
+            {/* Wildcard route to catch all other routes */}
+            <Route path="*">
+              <NotFound />
             </Route>
           </Switch>
         </div>

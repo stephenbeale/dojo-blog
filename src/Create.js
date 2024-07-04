@@ -4,7 +4,7 @@ const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("mario");
-  const [isPending, setIsPending] = useState("false");
+  const [isPending, setIsPending] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,10 +46,8 @@ const Create = () => {
           <option value="mario">mario</option>
           <option value="yoshi">yoshi</option>
         </select>
-        <button>Add Blog</button>
-        <p>{title}</p>
-        <p>{body}</p>
-        <p>{author}</p>
+        {!isPending && <button>Add Blog</button>}
+        {isPending && <button disabled>Adding blog...</button>}
       </form>
     </div>
   );
